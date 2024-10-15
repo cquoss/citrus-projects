@@ -7,7 +7,33 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>Quoß :: Citrus :: Projects :: Root</name>
+    <properties>
+        <artemis.version>2.37.0</artemis.version>
+        <citrus.version>4.3.3</citrus.version>
+        <logback.version>1.5.10</logback.version>
+        <maven.compiler.release>21</maven.compiler.release>
+        <slf4j.version>2.0.16</slf4j.version>
+    </properties>
     <modules>
         <module>citrus-purge-jms-queues</module>
     </modules>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>integration-tests</id>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

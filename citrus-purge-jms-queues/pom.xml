@@ -9,4 +9,62 @@
     </parent>
     <artifactId>citrus-purge-jms-queues</artifactId>
     <name>Quoß :: Citrus :: Projects :: Purge JMS Queues</name>
+    <dependencies>
+        <!-- compile scope -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jakarta-client</artifactId>
+            <version>${artemis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jakarta-server</artifactId>
+            <version>${artemis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- runtime scope -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.10</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- test scope -->
+        <dependency>
+            <groupId>org.citrusframework</groupId>
+            <artifactId>citrus-base</artifactId>
+            <version>${citrus.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.citrusframework</groupId>
+            <artifactId>citrus-jms</artifactId>
+            <version>${citrus.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.citrusframework</groupId>
+            <artifactId>citrus-spring</artifactId>
+            <version>${citrus.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.citrusframework</groupId>
+            <artifactId>citrus-testng</artifactId>
+            <version>${citrus.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
