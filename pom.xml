@@ -12,8 +12,21 @@
         <citrus.version>4.3.3</citrus.version>
         <logback.version>1.5.10</logback.version>
         <maven.compiler.release>21</maven.compiler.release>
+        <maven.failsafe.version>3.5.1</maven.failsafe.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>2.0.16</slf4j.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.citrusframework</groupId>
+                <artifactId>citrus-bom</artifactId>
+                <version>${citrus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <modules>
         <module>citrus-purge-jms-queues</module>
     </modules>
@@ -23,6 +36,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven.failsafe.version}</version>
                     <executions>
                         <execution>
                             <id>integration-tests</id>

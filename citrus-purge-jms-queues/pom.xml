@@ -15,11 +15,23 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-jakarta-client</artifactId>
             <version>${artemis.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-jakarta-server</artifactId>
             <version>${artemis.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -30,32 +42,28 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.10</version>
+            <version>${logback.version}</version>
             <scope>runtime</scope>
         </dependency>
         <!-- test scope -->
         <dependency>
             <groupId>org.citrusframework</groupId>
             <artifactId>citrus-base</artifactId>
-            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.citrusframework</groupId>
             <artifactId>citrus-jms</artifactId>
-            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.citrusframework</groupId>
             <artifactId>citrus-spring</artifactId>
-            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.citrusframework</groupId>
             <artifactId>citrus-testng</artifactId>
-            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
